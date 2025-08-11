@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Sherman SEO</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: #fff;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            font-size: 18px;
+            color: #4F46E5;
+        }
+
+        .logo::before {
+            content: "🔷";
+            margin-right: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #666;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #4F46E5;
+        }
+
+        .cta-button {
+            background: #FF6B35;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.3s;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background: #e55a2b;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 80px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #1a202c;
+        }
+
+        .hero .highlight {
+            color: #4F46E5;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .testimonial {
+            font-style: italic;
+            color: #4F46E5;
+            font-weight: 600;
+            margin: 20px 0;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #1a202c;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        /* Strategy Overview */
+        .strategy-overview {
+            background: #f8fafc;
+        }
+
+        .strategy-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .strategy-content p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 20px;
+        }
+
+        .service-card p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .service-card ul {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .service-card li {
+            color: #555;
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .service-card li::before {
+            content: "✓";
+            color: #4F46E5;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Process Steps */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: #4F46E5;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+
+        .process-step h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 15px;
+        }
+
+        .process-step p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Deliverables Section */
+        .deliverables {
+            background: #f8fafc;
+        }
+
+        .deliverable-item {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .deliverable-item h4 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 15px;
+        }
+
+        .deliverable-item p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cta-button-large {
+            background: #FF6B35;
+            color: white;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+
+        .cta-button-large:hover {
+            background: #e55a2b;
+        }
+
+        /* Footer Note */
+        .footer-note {
+            background: #1a202c;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+     <!-- Header  -->
+    <!-- <header class="header">
+        <nav class="nav container">
+            <div class="logo">SHERMAN SEO</div>
+            <ul class="nav-links">
+                <li><a href="#why-us">Why us?</a></li>
+                <li><a href="#opportunity">The Opportunity</a></li>
+                <li><a href="#process">Our Process</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#get-started" class="cta-button">GET YOUR FREE GROWTH PLAN</a>
+        </nav>
+    </header> -->
+     <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#hero" class="logo text-2xl">
+                <span class="logo-icon">S</span>SHERMAN SEO
+            </a>
+            <div class="hidden lg:flex items-center space-x-8 text-gray-600 font-medium">
+                <a href="#why-gbp" class="hover:text-black transition-colors">Why GBP?</a>
+                <a href="#opportunity" class="hover:text-black transition-colors">The Opportunity</a>
+                <a href="#our-process" class="hover:text-black transition-colors">Our Process</a>
+                <a href="#contact" class="hover:text-black transition-colors">Contact</a>
+            </div>
+            <a href="#contact" class="hidden lg:inline-block btn-primary text-sm">Get Your Free Growth Plan</a>
+        </nav>
+    </header>
+    <main class="main-content">
+         <!-- Hero Section  -->
+        <section class="hero">
+            <div class="container">
+                <h1>Website / Social Media / <span class="highlight">AI SEO</span>…</h1>
+                <p>for MedSpas, Plastic Surgery Practices, and More</p>
+                <div class="testimonial">"Outstanding results! – BBC Worldwide"</div>
+                <a href="#get-started" class="cta-button-large">Get Started!</a>
+            </div>
+        </section>
+
+         <!-- Strategy Overview  -->
+        <section class="section strategy-overview">
+            <div class="container">
+                <h2 class="section-title">Strategy Overview</h2>
+                <div class="strategy-content">
+                    <p>The goal of an overall optimized campaign covering these three areas, your Website, Social Media, and your AI SEO is to get you significantly more relevant traffic and engagement.</p>
+                    <p>We accomplish this by using a specific process to increase your results early - measured by your traffic, incoming contacts, calls, and completed forms.</p>
+                    <p><strong>It's powerful!</strong></p>
+                </div>
+            </div>
+        </section>
+
+         <!-- Advanced Competitive Research  -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Advanced Competitive Research</h2>
+                <p class="section-subtitle">Because Google and today's AI tools want to see you as an authority, we review your direct and indirect competitors to find all the valuable keywords in your niche.</p>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>Competitive Gap Analysis</h3>
+                        <p>We perform advanced competitive research to find what's possible and in most cases, some easy wins. This analysis results in a large list of valuable keywords that your competition is targeting and that your audience is using in their searches.</p>
+                        <p>We use these keywords to build out high quality webpage and blog content to attract your perfect customer.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h3>Keyword Strategy</h3>
+                        <p>While keywords aren't everything, they're still important. By combining Competitive Gap Analysis with optimized content we are able to achieve awesome boosts in targeted traffic.</p>
+                        <p>This strategic approach ensures you're targeting the right terms that your potential customers are actually searching for.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <!-- Deliverables  -->
+        <section class="section deliverables">
+            <div class="container">
+                <h2 class="section-title">Deliverables</h2>
+                <p class="section-subtitle">After the research is completed we use a combination of creative and technical work to produce strong results. The pace and power of your results is based upon your budget, and we give you budget options.</p>
+
+                <div class="deliverable-item">
+                    <h4>Effective Blog Writing & Web Pages</h4>
+                    <p>High-quality, properly structured (very important for AI recognition), SEO-optimized Blog posts and Web Page content will be created for your site. Consistently adding AI optimized content to your website shows Google and AI software that you are an active authority.</p>
+                    <p>Blog content increases the number and breadth of keywords your website ranks for. Blog posts also attract mid-cycle buyers leading them to take action and contact you. This content also expands the reach of your brand, building trust by providing relevant helpful info for your target audiences.</p>
+                </div>
+
+                <div class="deliverable-item">
+                    <h4>Social Media Content Creation / Management</h4>
+                    <p>Working with you and your team, consistently create, manage, and monitor the posting of prioritized engaging content. Platforms include Instagram, Youtube, Facebook, Tiktok and anywhere that may work for you.</p>
+                    <p>This work can include basic advertising set-up and trial ads if you're interested.</p>
+                </div>
+
+                <div class="deliverable-item">
+                    <h4>Local Citations</h4>
+                    <p>If you have a local practice or MedSpa or another local business, it's essential to get listed in your industry's top directories. We use a successful process to get you NAP citations in the top directories for your niche.</p>
+                    <p>The purpose of citation efforts are to, again, have you in the top industry directories, and have you ranking in the Google Map Pack, which delivers relevant links to your website. We are experts at local AI SEO and we can seriously increase the local interest in you and your brand.</p>
+                </div>
+
+                <div class="deliverable-item">
+                    <h4>Technical SEO</h4>
+                    <p>After we complete research on your situation and your competitive landscape, we begin technical SEO work in sync with your new optimized content to get you results faster than ever. This includes:</p>
+                    <ul>
+                        <li><strong>Page Structure:</strong> Implementing proper technical page structure, including a clear hierarchy, logical internal linking, consistent URL structures, and minimal crawl depth</li>
+                        <li><strong>Site Speed and Performance:</strong> Optimize website speed and performance by optimizing images, minimizing HTTP requests, and leveraging browser caching, and ensuring your website meets Google's Core Web Vitals</li>
+                        <li><strong>Content Optimization:</strong> Implement structured data and schema markup to help search engines better understand your content. Fix any broken internal and outbound links to improve user experience and crawlability</li>
+                        <li><strong>Meta Optimization:</strong> Optimize meta descriptions and title tags for relevant keywords. Ensure your website is accessible to all users, including those with disabilities</li>
+                    </ul>
+                </div>
+
+                <div class="deliverable-item">
+                    <h4>Monthly Reporting And Communication</h4>
+                    <p>Each month you will receive a monthly report detailing highlights and content reporting. All our reports are transparent.</p>
+                    <p>As we progress month over month, we will have new campaign initiatives for your review and approval and you can contact us anytime if you have questions or your own ideas.</p>
+                </div>
+            </div>
+        </section>
+
+         <!-- CTA Section  -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>Ready to Dominate Your Market?</h2>
+                <p>Get started with our comprehensive AI SEO strategy today and watch your traffic, leads, and revenue grow.</p>
+                <a href="#contact" class="cta-button-large">Get Started!</a>
+            </div>
+        </section>
+    </main>
+
+     <!-- Footer Note  -->
+    <footer class="footer-note">
+        <div class="container">
+            <p><strong>AI SEO</strong> is the up-to-date optimizing of web content to be recognized and mentioned by AI engines as well as Google.</p>
+        </div>
+    </footer>
+</body>
+</html>
