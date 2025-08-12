@@ -157,7 +157,7 @@
 <body>
 <div id="sherman-seo-landing-page">
 
-    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+    <!-- <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#hero" class="logo text-2xl">
                 <span class="logo-icon">S</span>SHERMAN SEO
@@ -171,6 +171,49 @@
             </div>
             <a href="#contact" class="hidden lg:inline-block btn-primary text-sm">Get Your Free Growth Plan</a>
         </nav>
+        Mobile menu
+      <div id="mobileMenu" class="mobile-menu lg:hidden bg-white border-t border-gray-200">
+        <div class="px-6 py-4 space-y-4">
+          <a href="#why-us" class="block text-gray-600 hover:text-black transition-colors">Why us?</a>
+          <a href="#opportunity" class="block text-gray-600 hover:text-black transition-colors">The Opportunity</a>
+          <a href="#our-process" class="block text-gray-600 hover:text-black transition-colors">Our Process</a>
+          <a href="#contact" class="block text-gray-600 hover:text-black transition-colors">Contact</a>
+          <a href="index.html" class="btn-primary text-sm inline-block mt-4">Get Your Free Growth Plan</a>
+        </div>
+      </div>
+    </header> -->
+
+    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+      <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="/index.html" class="logo text-2xl"> <span class="logo-icon">S</span>SHERMAN SEO </a>
+        <div class="hidden lg:flex items-center space-x-8 text-gray-600 font-medium">
+          <a href="#why-us" class="hover:text-black transition-colors">Why us?</a>
+          <a href="#opportunity" class="hover:text-black transition-colors">The Opportunity</a>
+          <a href="#our-process" class="hover:text-black transition-colors">Our Process</a>
+          <a href="service.html" class="hover:text-black transition-colors">Services</a>
+          <a href="index.html" class="hover:text-black transition-colors">Contact</a>
+        </div>
+        <a href="index.html" class="hidden lg:inline-block btn-primary text-sm">Get Your Free Growth Plan</a>
+
+        <!-- Mobile menu button -->
+        <button class="lg:hidden text-gray-600 hover:text-black" onclick="toggleMobileMenu()">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </nav>
+
+      <!-- Mobile menu -->
+      <div id="mobileMenu" class="mobile-menu lg:hidden bg-white border-t border-gray-200">
+        <div class="px-6 py-4 space-y-4">
+          <a href="#why-us" class="block text-gray-600 hover:text-black transition-colors">Why us?</a>
+          <a href="#opportunity" class="block text-gray-600 hover:text-black transition-colors">The Opportunity</a>
+          <a href="#our-process" class="block text-gray-600 hover:text-black transition-colors">Our Process</a>
+          <a href="#contact" class="block text-gray-600 hover:text-black transition-colors">Contact</a>
+          <a href="service.html" class="block text-gray-600 hover:text-black transition-colors">Services</a>
+          <a href="index.html" class="btn-primary text-sm inline-block mt-4">Get Your Free Growth Plan</a>
+        </div>
+      </div>
     </header>
 
     <main>
@@ -367,5 +410,21 @@
     </footer> -->
 
 </div>
+
+
+<script>
+      function toggleMobileMenu() {
+        const mobileMenu = document.getElementById("mobileMenu");
+        mobileMenu.classList.toggle("active");
+      }
+
+      // Close mobile menu when clicking on a link
+      document.querySelectorAll("#mobileMenu a").forEach((link) => {
+        link.addEventListener("click", () => {
+          document.getElementById("mobileMenu").classList.remove("active");
+        });
+      });
+
+      </script>
 </body>
 </html>
